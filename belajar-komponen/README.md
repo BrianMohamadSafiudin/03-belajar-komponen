@@ -74,7 +74,7 @@ export default function Home() {
 - Untuk beberapa alasan, atribut `aria-*` dan `data-*` ditulis menggunakan tanda minus.
 
 ## Soal 3
-#### Silakan perbaiki kode JSX berikut ini. Anda boleh menggunakan konverter atau perbaiki secara manual.
+#### Silakan perbaiki kode JSX. Anda boleh menggunakan konverter atau perbaiki secara manual.
 
 ```tsx
 import { Gallery } from "@/components/gallery";
@@ -106,7 +106,7 @@ export default function Bio() {
 # Praktikum 3: Menggunakan JSX dinamis
 
 ## Soal 4
-#### Kode di atas masih terdapat error, silakan diperbaiki.
+#### Kode masih terdapat error, silakan diperbaiki.
 
 ```tsx
 const person = {
@@ -200,3 +200,100 @@ export default function TodoList() {
 - Dalam kode di atas, saya menggunakan `tanda kutip backtick ()` untuk membungkus string yang mengandung ekspresi JavaScript, dan saya menggabungkan variabel baseUrl, person.imageId, dan person.imageSizeke dalam string menggunakan${}`.
 
 - Perbedaan dalam tampilan web saat ini, gambar menyesuaikan ukuran setelah diubah.
+
+- Jika dobel kurung kurawal setelah person= membuat Anda bingung, ingatlah bahwa `mereka hanyalah sebuah objek` dalam kurung kurawal JSX.
+
+---
+
+# Praktikum 4: Menggunakan Props
+
+## Soal 7
+#### Jika kode terdapat error, silakan diperbaiki.
+#### Komponen MyGallery ini berisi dua markup yang sama persis. Ekstraklah menjadi komponen MyProfile untuk mengurangi duplikasi. Anda perlu memilih props apa saja yang akan dikirimkan.
+#### Capture hasilnya dan buatlah laporan di README.md. Jelaskan apa yang telah Anda pelajari dan bagaimana tampilannya saat ini?
+
+```tsx
+interface ProfileProps {
+  name: string;
+  imageUrl: string;
+  profession: string;
+  awards: string[];
+  discovery: string;
+}
+
+const MyProfile: React.FC<ProfileProps> = ({ name, imageUrl, profession, awards, discovery }) => {
+  return (
+    <section className="profile">
+      <h2>{name}</h2>
+      <img
+        className="avatar"
+        src={imageUrl}
+        alt={name}
+        width={70}
+        height={70}
+      />
+      <ul>
+        <li>
+          <b>Profesi: </b> 
+          {profession}
+        </li>
+        <li>
+          <b>Penghargaan: {awards.length} </b> 
+          ({awards.join(', ')})
+        </li>
+        <li>
+          <b>Telah Menemukan: </b>
+          {discovery}
+        </li>
+      </ul>
+    </section>
+  );
+}
+
+export default MyProfile;
+```
+
+```tsx
+import MyProfile from './myprofile';
+
+const MyGallery = () => {
+  return (
+    <div>
+      <h1>Notable Scientists</h1>
+      <MyProfile
+        name="Maria Skłodowska-Curie"
+        imageUrl='szV5sdG'
+        profession="Fisikawan dan kimiawan"
+        awards={[
+          "Penghargaan Nobel Fisika",
+          "Penghargaan Nobel Kimia",
+          "Medali Davy",
+          "Medali Matteucci"
+        ]}
+        discovery="polonium (unsur kimia)"
+      />
+      <MyProfile
+        name="Katsuko Saruhashi"
+        imageUrl='YfeOqp2'
+        profession="Ahli Geokimia"
+        awards={[
+          "Penghargaan Miyake Geokimia",
+          "Penghargaan Tanaka"
+        ]}
+        discovery="sebuah metode untuk mengukur karbon dioksida pada air laut"
+      />
+    </div>
+  );
+}
+
+export default MyGallery;
+```
+![Screenshot P4](assets-report/praktikum4soal7.jpg)
+
+- Dalam kode di atas, saya menggunakan `interface` untuk mendefinisikan tipe data dari props yang akan digunakan dalam komponen MyProfile.
+
+- Saya menggunakan `React.FC` untuk mendefinisikan tipe dari props yang akan digunakan dalam komponen MyProfile.
+
+- Saya menggunakan `props` untuk mengirimkan data dari komponen MyGallery ke komponen MyProfile.
+
+- Perbedaan dalam tampilan web saat ini, menampilkan dua komponen: `MyProfile
