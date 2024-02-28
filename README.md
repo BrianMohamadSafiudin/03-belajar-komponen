@@ -3,4 +3,4 @@
 
 |Weeks           |PROJECTS                         |LINKS                        |
 |----------------|---------------------------------|-----------------------------|
-|Week 03         |`'belajar komponen'`          |https://github.com/BrianMohamadSafiudin/02-react-hello-world/blob/main/belajar-komponen/README.md
+|Week 03         |`'belajar komponen'`          |https://github.com/BrianMohamadSafiudin/03-belajar-komponen/blob/main/belajar-komponen/README.md
