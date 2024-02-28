@@ -64,3 +64,37 @@ export default function Home() {
 ![Screenshot P2](assets-report/praktikum2soal2.jpg)
 
 - `import { Gallery } from "@/components/gallery";` Ini adalah pernyataan import yang mengimpor komponen Gallery dari lokasi relatif "@/components/gallery". Lokasi @ mungkin merupakan konvensi untuk root direktori proyek.
+
+- `JSX dan React` adalah dua hal yang berbeda. Mereka masing-masing digunakan secara bersama, namun anda dapat menggunakannya sendiri secara independen.JSX merupakan ekstensi sintaks, sedangkan React adalah library JavaScript.
+
+- Umumnya, pesan error pada React akan memandu anda mencari sumber masalah yang ada di kode. `Jangan lupa membaca pesan error` jika anda stuck!
+
+- `JSX mirip dengan HTML`, namun di balik layar, mereka berubah menjadi objek literal JavaScript. Anda tidak bisa mengembalikan dua objek dari sebuah fungsi tanpa membungkus mereka ke sebuah senarai. Inilah mengapa anda juga tidak bisa mengembalikan dua tag JSX tanpa membungkus mereka menjadi sebuah fragment.
+
+- Untuk beberapa alasan, atribut `aria-*` dan `data-*` ditulis menggunakan tanda minus.
+
+## Soal 3
+#### Silakan perbaiki kode JSX berikut ini. Anda boleh menggunakan konverter atau perbaiki secara manual.
+
+```tsx
+import { Gallery } from "@/components/gallery";
+
+export default function Bio() {
+  return (
+    <div className="intro">
+      <h1>Selamat datang di website Brian!</h1>
+      <p className="summary">
+        Anda dapat membaca uneg-uneg saya di sini.
+        <br/><br/>
+        <b>Juga ada <i>foto</i> ilmuan!</b>
+        <Gallery />
+      </p>
+    </div>
+  );
+}
+```
+![Screenshot P2](assets-report/praktikum2soal3.jpg)
+
+- Error yang terjadi karena `kesalahan dalam struktur JSX` pada fungsi Bio().
+- `Penempatan elemen <p> di luar dari elemen <div>` yang mengakibatkan struktur JSX tidak valid. Dalam JSX, setiap elemen harus dibungkus oleh satu elemen induk atau elemen pembungkus terluar.
+- `Penutupan tag bold dan italic (<b> dan <i>) tidak sesuai urutan yang benar`, sehingga tidak valid secara sintaksis dalam HTML.
