@@ -135,5 +135,28 @@ export default function TodoList() {
   );
 }
 ```
-- Perubahan yang dilakukan adalah mengganti` {person}` dengan `{person.name}` di dalam tag <h1>, karena kita ingin menampilkan nama dari objek person. Kemudian mengganti tanda kutip tunggal `"'"` sebelum s Todos dengan `&apos`;.
+- Perubahan yang dilakukan adalah mengganti` {person}` dengan `{person.name}` di dalam tag h1, karena kita ingin menampilkan nama dari objek person. Kemudian mengganti tanda kutip tunggal `"'"` sebelum s Todos dengan `&apos`;.
 
+## Soal 5
+#### Buka file src/components/todolist.tsx lakukan ekstrak URL gambar ke dalam objek person.
+#### Capture hasilnya dan buatlah laporan di README.md. Apakah ada perbedaan pada tampilan web saat ini?
+
+```tsx
+import { Gallery } from "@/components/gallery";
+import TodoList from "@/components/todolist";
+
+export default function Home() {
+  return (
+    <section>
+      <h1 className="font-semibold text-slate-900 truncate pr-20 text-center">Ilmuwan yang luar biasa</h1>
+      <hr />
+      <Gallery />
+      <hr />
+      <TodoList />
+    </section>
+  );
+}
+```
+![Screenshot P3](assets-report/praktikum3soal5.jpg)
+
+- Perbedaan dalam tampilan web saat ini, menampilkan dua komponen: `Gallery` dan `TodoList`
