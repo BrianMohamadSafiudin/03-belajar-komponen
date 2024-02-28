@@ -98,3 +98,42 @@ export default function Bio() {
 - Error yang terjadi karena `kesalahan dalam struktur JSX` pada fungsi Bio().
 - `Penempatan elemen <p> di luar dari elemen <div>` yang mengakibatkan struktur JSX tidak valid. Dalam JSX, setiap elemen harus dibungkus oleh satu elemen induk atau elemen pembungkus terluar.
 - `Penutupan tag bold dan italic (<b> dan <i>) tidak sesuai urutan yang benar`, sehingga tidak valid secara sintaksis dalam HTML.
+
+- Properti style dalam bentuk inline ditulis menggunakan `gaya camelCase di dalam JSX`. Sebagai contoh, jika pada HTML Anda menuliskan < ul style="background-color: black" >, maka pada komponen React Anda harus menulisnya seperti ini < ul style={{ backgroundColor: 'black' }} >.
+
+---
+
+# Praktikum 3: Menggunakan JSX dinamis
+
+## Soal 4
+#### Kode di atas masih terdapat error, silakan diperbaiki.
+
+```tsx
+const person = {
+  name: 'Gregorio Y. Zara',
+  theme: {
+    backgroundColor: 'black',
+    color: 'pink'
+  }
+};
+
+export default function TodoList() {
+  return (
+    <div style={person.theme}>
+      <h1>{person.name}&apos;s Todos</h1>
+      <img
+        className="avatar"
+        src="https://i.imgur.com/7vQD0fPs.jpg"
+        alt="Gregorio Y. Zara"
+      />
+      <ul>
+        <li>Improve the videophone</li>
+        <li>Prepare aeronautics lectures</li>
+        <li>Work on the alcohol-fuelled engine</li>
+      </ul>
+    </div>
+  );
+}
+```
+- Perubahan yang dilakukan adalah mengganti` {person}` dengan `{person.name}` di dalam tag <h1>, karena kita ingin menampilkan nama dari objek person. Kemudian mengganti tanda kutip tunggal `"'"` sebelum s Todos dengan `&apos`;.
+
