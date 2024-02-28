@@ -297,3 +297,42 @@ export default MyGallery;
 - Saya menggunakan `props` untuk mengirimkan data dari komponen MyGallery ke komponen MyProfile.
 
 - Perbedaan dalam tampilan web saat ini, menampilkan dua komponen: `MyProfile
+
+## Soal 8
+#### Jika kode terdapat error, silakan diperbaiki.
+#### Ubahlah komponen MyAvatar untuk diolah ukuran gambarnya berdasarkan prop size. Khususnya, jika size kurang dari 90, kirimkan 's' ("small") bukan 'b' ("big") pada fungsi getImageUrl. Pastikan bahwa perubahan yang Anda buat berjalan dengan cara me-render avatars dengan nilai prop size yang berbeda dan buka gambar pada tab baru di browser.
+#### Capture hasilnya dan buatlah laporan di README.md. Jelaskan apa yang telah Anda pelajari dan bagaimana tampilannya saat ini?
+
+```tsx
+import { getImageUrlV2 } from '@/utils/utils';
+
+function MyAvatar({ person, size }) {
+    const imageSize = size < 90 ? 's' : 'b';
+  return (
+    <img
+      className="avatar"
+      src={getImageUrlV2(person, imageSize)}
+      alt={person.name}
+      width={size}
+      height={size}
+    />
+  );
+}
+
+export default function MyProfile() {
+  return (
+    <MyAvatar
+      size={40}
+      person={{ 
+        name: 'Gregorio Y. Zara', 
+        imageId: '7vQD0fP'
+      }}
+    />
+  );
+}
+```
+![Screenshot P4](assets-report/praktikum4soal8.jpg)
+
+- Saya menggunakan `size < 90 ? 's' : 'b';` untuk mengubah ukuran gambar berdasarkan prop size.
+
+- Perbedaan dalam tampilan web saat ini, menampilkan komponen: `MyProfile` yang menampilkan gambar avatar dengan ukuran 40x40.
