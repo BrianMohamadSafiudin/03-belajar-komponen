@@ -160,3 +160,43 @@ export default function Home() {
 ![Screenshot P3](assets-report/praktikum3soal5.jpg)
 
 - Perbedaan dalam tampilan web saat ini, menampilkan dua komponen: `Gallery` dan `TodoList`
+
+## Soal 6
+#### Perbaiki kode tersebut pada bagian atribut src. Kode lainnya dapat Anda sesuaikan dari jawaban soal sebelumnya. Capture hasilnya dan buatlah laporan di README.md. Jelaskan apa yang telah Anda pelajari dan bagaimana tampilannya saat ini?
+#### Untuk memeriksa apakah perbaikan Anda berhasil, coba ubah nilai dari imageSize menjadi 'b'. Gambar harus menyesuaikan ukuran setelah diubah.
+
+```tsx
+const baseUrl = 'https://i.imgur.com/';
+const person = {
+  name: 'Gregorio Y. Zara',
+  imageId: '7vQD0fP',
+  imageSize: 'b',
+  theme: {
+    backgroundColor: 'black',
+    color: 'pink'
+  }
+};
+
+export default function TodoList() {
+  return (
+    <div style={person.theme}>
+      <h1>{person.name}&apos;s Todos</h1>
+      <img
+        className="avatar"
+        src={`${baseUrl}${person.imageId}${person.imageSize}.jpg`}
+        alt={person.name}
+      />
+      <ul>
+        <li>Improve the videophone</li>
+        <li>Prepare aeronautics lectures</li>
+        <li>Work on the alcohol-fuelled engine</li>
+      </ul>
+    </div>
+  );
+}
+```
+![Screenshot P3](assets-report/praktikum3soal6.jpg)
+
+- Dalam kode di atas, saya menggunakan `tanda kutip backtick ()` untuk membungkus string yang mengandung ekspresi JavaScript, dan saya menggabungkan variabel baseUrl, person.imageId, dan person.imageSizeke dalam string menggunakan${}`.
+
+- Perbedaan dalam tampilan web saat ini, gambar menyesuaikan ukuran setelah diubah.
