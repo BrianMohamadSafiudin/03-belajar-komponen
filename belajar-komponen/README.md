@@ -336,3 +336,46 @@ export default function MyProfile() {
 - Saya menggunakan `size < 90 ? 's' : 'b';` untuk mengubah ukuran gambar berdasarkan prop size.
 
 - Perbedaan dalam tampilan web saat ini, menampilkan komponen: `MyProfile` yang menampilkan gambar avatar dengan ukuran 40x40.
+
+## Soal 9
+#### Jika kode terdapat error, silakan diperbaiki.
+#### Buatlah komponen Card dari kode di atas, lalu gunakan prop children untuk mengirimkan JSX yang berbeda.
+#### Capture hasilnya dan buatlah laporan di README.md. Jelaskan apa yang telah Anda pelajari dan bagaimana tampilannya saat ini?
+
+```tsx
+function Card({ children }) {
+  return (
+    <div className="card">
+      <div className="card-content">
+        {children}
+      </div>
+    </div>
+  );
+}
+
+export default function MyProfileV2() {
+  return (
+    <div>
+      <Card>
+        <h1>Foto</h1>
+        <img
+          className="avatar"
+          src="https://i.imgur.com/OKS67lhm.jpg"
+          alt="Aklilu Lemma"
+          width={70}
+          height={70}
+        />
+      </Card>
+      <Card>
+        <h1>Tentang</h1>
+        <p>Aklilu Lemma adalah seorang ilmuwan terkemuka dari Ethiopia yang telah menemukan pengobatan alami untuk skistosomiasis.</p>
+      </Card>
+    </div>
+  );
+}
+```
+![Screenshot P4](assets-report/praktikum4soal9.jpg)
+
+- Saya menggunakan `prop children` untuk mengirimkan JSX yang berbeda ke dalam komponen Card.
+
+- Perbedaan dalam tampilan web saat ini, menampilkan dua komponen: `Card` yang menampilkan foto dan tentang ilmuwan Aklilu Lemma.

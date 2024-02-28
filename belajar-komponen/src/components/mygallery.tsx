@@ -1,15 +1,28 @@
-import MyProfile from './myprofile';
+import MyProfileV2 from './myprofilev2';
 
 const MyGallery = () => {
   return (
     <div>
       <h1>Notable Scientists</h1>
-      <MyProfile/>
+      <MyProfileV2/>
     </div>
   );
 }
 
 export default MyGallery;
+
+// import MyProfile from './myprofile';
+
+// const MyGallery = () => {
+//   return (
+//     <div>
+//       <h1>Notable Scientists</h1>
+//       <MyProfile/>
+//     </div>
+//   );
+// }
+
+// export default MyGallery;
 
 
 // import MyProfile from './myprofile';
